@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UploadFile{% endblock %}
+
+{% block body %}
+    <h1>UploadFile</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ upload_file.id }}</td>
+            </tr>
+            <tr>
+                <th>Brochurefilename</th>
+                <td>{{ upload_file.brochurefilename }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_upload_file_controller1_index') }}">back to list</a>
+
+    <a href="{{ path('app_upload_file_controller1_edit', {'id': upload_file.id}) }}">edit</a>
+
+    {{ include('upload_file_controller1/_delete_form.html.twig') }}
+{% endblock %}
